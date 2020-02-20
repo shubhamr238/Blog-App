@@ -1,0 +1,22 @@
+<%include ./partials/header.ejs %>
+	<div class="ui main text container segment">
+		<div class="ui huge header">New Blog Post</div>
+		<form class="ui form" action="/blogs" method="POST">
+			<div class="field">
+				<label>Title:</label>
+				<input type="text" name="blog[title]" placeholder="Title">
+			</div>
+			
+			<div class="field">
+				<label>Inage URL:</label>
+				<input type="text" name="blog[image]" placeholder="Image URL">
+			</div>
+			
+			<div class="field">
+				<label>Blog Post:</label>
+				<textarea type="text" name="blog[body]" placeholder="Blog Post Here..."></textarea>
+			</div>
+			<input class="ui blue inverted button"type="submit">
+		</form>
+	</div>
+<%include ./partials/footer.ejs %>

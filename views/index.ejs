@@ -1,0 +1,27 @@
+<%include ./partials/header.ejs %>
+<div class="ui main text cointainer">
+	<div class="ui huge header">Welcome to <i class="code icon"></i> Blog</div>
+	<div class="ui top attached segment">
+		<div class="ui divided items">
+			<% blog.forEach(function(blog){ %>
+				<div class="item">
+					<div class="ui centered rounded medium image">
+						<img  src="<%= blog.image %>" style="padding-right:1.0em;">
+					</div>
+					<div>
+					<a class="ui header" href="/blogs/<%= blog._id %>"> <%= blog.title %> </a> <br>
+					<div class="meta">
+						<span> <%= blog.created.toDateString() %> </span>
+					</div>
+					
+					<p><%- blog.body.substring(0,400) %>...</p>
+					<a class="ui inverted small violet button"href="/blogs/<%= blog._id %>">Read More</a>
+					</div>
+					
+				</div>
+			<% }) %>
+		</div>
+	</div>
+</div>
+
+<%include ./partials/footer.ejs %>
